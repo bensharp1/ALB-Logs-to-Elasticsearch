@@ -14,6 +14,7 @@
  * express or implied.  See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 /* Imports */
 var AWS = require('aws-sdk');
 var LineStream = require('byline').LineStream;
@@ -96,6 +97,8 @@ function postDocumentToES(doc, context) {
                 console.log('All ' + numDocsAdded + ' log records added to ES.');
                 context.succeed();
             }
+    console.log('Response body: ' + body);
+	console.log(req)   
         });
     }, function(err) {
         console.log('Error: ' + err);
